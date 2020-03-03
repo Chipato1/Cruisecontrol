@@ -2,21 +2,16 @@ classType myWork.myDriver
 blockdiagramSpecification Main {
 	methodBody drive {
 		outPin active {
-			connection_5, connection_6
+			connection_5, connection_10, connection_12, connection_14, connection_16, connection_18
 		}
 	}
-	simpleIdentifier p at (561, 105) {
+	simpleIdentifier power at (561, 105) {
 		label at (0, -1)
 		outPin {
 			connection_2
 		}
 		sequenceCall {
 			inPin
-		}
-	}
-	literal Numeric "0.0" at (561, 193) size (49, 0) {
-		outPin {
-			connection_4
 		}
 	}
 	simpleIdentifier resources.DriverMessages.powerDriver at (731, 105) {
@@ -28,9 +23,82 @@ blockdiagramSpecification Main {
 	}
 	simpleIdentifier resources.DriverMessages.brakeDriver at (731, 195) {
 		label at (0, -1)
-		inPin connection_4
+		inPin connection_11
 		sequenceCall {
-			inPin connection_6
+			inPin connection_10
+		}
+	}
+	simpleIdentifier braking at (561, 195) {
+		label at (0, -1)
+		outPin {
+			connection_11
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.targetSpeedUp at (731, 315) {
+		label at (0, -1)
+		inPin connection_13
+		sequenceCall {
+			inPin connection_12
+		}
+	}
+	simpleIdentifier resources.DriverMessages.targetSpeedDown at (731, 405) {
+		label at (0, -1)
+		inPin connection_15
+		sequenceCall {
+			inPin connection_14
+		}
+	}
+	simpleIdentifier resources.DriverMessages.CC_On at (731, 485) {
+		label at (0, -1)
+		inPin connection_17
+		sequenceCall {
+			inPin connection_16
+		}
+	}
+	simpleIdentifier resources.DriverMessages.CC_Off at (731, 585) {
+		label at (0, -1)
+		inPin connection_19
+		sequenceCall {
+			inPin connection_18
+		}
+	}
+	simpleIdentifier speedUp at (561, 315) {
+		label at (0, -1)
+		outPin {
+			connection_13
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier speedDown at (561, 405) {
+		label at (0, -1)
+		outPin {
+			connection_15
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier ccOn at (561, 485) {
+		label at (0, -1)
+		outPin {
+			connection_17
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier ccOff at (561, 585) {
+		label at (0, -1)
+		outPin {
+			connection_19
+		}
+		sequenceCall {
+			inPin
 		}
 	}
 }

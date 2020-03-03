@@ -3,6 +3,8 @@
 	<name>myACC</name>
 	<comment></comment>
 	<projects>
+		<project>AssertionLibrary</project>
+		<project>myACC_CGen</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
