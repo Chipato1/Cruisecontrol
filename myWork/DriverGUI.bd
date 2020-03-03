@@ -1,0 +1,104 @@
+classType myWork.DriverGUI
+blockdiagramSpecification Main {
+	methodBody drive {
+		outPin active {
+			connection_1, connection_3, connection_5, connection_7, connection_9, connection_11
+		}
+	}
+	simpleIdentifier ccOn at (561, 485) {
+		label at (0, -1)
+		outPin {
+			connection_12
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier ccOff at (561, 585) {
+		label at (0, -1)
+		outPin {
+			connection_8
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier power at (561, 105) {
+		label at (0, -1)
+		outPin {
+			connection_2
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier speedUp at (561, 315) {
+		label at (0, -1)
+		outPin {
+			connection_4
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier speedDown at (561, 405) {
+		label at (0, -1)
+		outPin {
+			connection_6
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier braking at (561, 195) {
+		label at (0, -1)
+		outPin {
+			connection_10
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.powerDriver at (731, 105) {
+		label at (0, -1)
+		inPin connection_2
+		sequenceCall {
+			inPin connection_1
+		}
+	}
+	simpleIdentifier resources.DriverMessages.brakeDriver at (731, 195) {
+		label at (0, -1)
+		inPin connection_10
+		sequenceCall {
+			inPin connection_9
+		}
+	}
+	simpleIdentifier resources.DriverMessages.targetSpeedUp at (731, 315) {
+		label at (0, -1)
+		inPin connection_4
+		sequenceCall {
+			inPin connection_3
+		}
+	}
+	simpleIdentifier resources.DriverMessages.targetSpeedDown at (731, 405) {
+		label at (0, -1)
+		inPin connection_6
+		sequenceCall {
+			inPin connection_5
+		}
+	}
+	simpleIdentifier resources.DriverMessages.CC_On at (731, 485) {
+		label at (0, -1)
+		inPin connection_12
+		sequenceCall {
+			inPin connection_11
+		}
+	}
+	simpleIdentifier resources.DriverMessages.CC_Off at (731, 585) {
+		label at (0, -1)
+		inPin connection_8
+		sequenceCall {
+			inPin connection_7
+		}
+	}
+}
