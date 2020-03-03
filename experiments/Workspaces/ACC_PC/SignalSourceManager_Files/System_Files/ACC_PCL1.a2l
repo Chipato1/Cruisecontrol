@@ -56,7 +56,7 @@
 		        QP_BLOB 1
 		    /end SOURCE
 		    /begin TP_BLOB
-		         /* programm id */ 4152377099
+		         /* programm id */ 4152384427
 		         /* target id   */ 7
 		         /*             */ 0 2 0
 		    /end TP_BLOB
@@ -195,24 +195,54 @@
 			/end IF_DATA
 		/end CHARACTERISTIC
 
-		/begin CHARACTERISTIC myWork.myDriver.p
+		/begin CHARACTERISTIC myWork.DriverGUI.ccOn
 			/* long identifier    */ ""
 			/* type               */ VALUE
-			/* ecu address        */ 0x4530A0
+			/* ecu address        */ 0x4540A9
+			/* record layout      */ STANDARD_VALUE_U8
+			/* max diff value     */ 0.0
+			/* conversion         */ esdl_ident
+			/* lower limit        */ 0
+			/* upper limit        */ 1
+			BIT_MASK 0x1
+			/begin IF_DATA E_TARGET
+			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1000 0
+			/end IF_DATA
+		/end CHARACTERISTIC
+
+		/begin CHARACTERISTIC myWork.DriverGUI.ccOff
+			/* long identifier    */ ""
+			/* type               */ VALUE
+			/* ecu address        */ 0x4540A8
+			/* record layout      */ STANDARD_VALUE_U8
+			/* max diff value     */ 0.0
+			/* conversion         */ esdl_ident
+			/* lower limit        */ 0
+			/* upper limit        */ 1
+			BIT_MASK 0x1
+			/begin IF_DATA E_TARGET
+			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1000 1
+			/end IF_DATA
+		/end CHARACTERISTIC
+
+		/begin CHARACTERISTIC myWork.DriverGUI.power
+			/* long identifier    */ ""
+			/* type               */ VALUE
+			/* ecu address        */ 0x4540A4
 			/* record layout      */ STANDARD_VALUE_R32
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
 			/begin IF_DATA E_TARGET
-			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1000 0
+			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1000 2
 			/end IF_DATA
 		/end CHARACTERISTIC
 
-		/begin CHARACTERISTIC myWork.myDriver.ccOn
+		/begin CHARACTERISTIC myWork.DriverGUI.speedUp
 			/* long identifier    */ ""
 			/* type               */ VALUE
-			/* ecu address        */ 0x4530A5
+			/* ecu address        */ 0x4540AB
 			/* record layout      */ STANDARD_VALUE_U8
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
@@ -220,14 +250,14 @@
 			/* upper limit        */ 1
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
-			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1000 1
+			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1000 3
 			/end IF_DATA
 		/end CHARACTERISTIC
 
-		/begin CHARACTERISTIC myWork.myDriver.ccOff
+		/begin CHARACTERISTIC myWork.DriverGUI.speedDown
 			/* long identifier    */ ""
 			/* type               */ VALUE
-			/* ecu address        */ 0x4530A4
+			/* ecu address        */ 0x4540AA
 			/* record layout      */ STANDARD_VALUE_U8
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
@@ -235,37 +265,21 @@
 			/* upper limit        */ 1
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
-			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1000 2
+			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1000 4
 			/end IF_DATA
 		/end CHARACTERISTIC
 
-		/begin CHARACTERISTIC myWork.myDriver.targetSpeedUp
+		/begin CHARACTERISTIC myWork.DriverGUI.braking
 			/* long identifier    */ ""
 			/* type               */ VALUE
-			/* ecu address        */ 0x4530A7
-			/* record layout      */ STANDARD_VALUE_U8
+			/* ecu address        */ 0x4540A0
+			/* record layout      */ STANDARD_VALUE_R32
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
-			/* lower limit        */ 0
-			/* upper limit        */ 1
-			BIT_MASK 0x1
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
 			/begin IF_DATA E_TARGET
-			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1000 3
-			/end IF_DATA
-		/end CHARACTERISTIC
-
-		/begin CHARACTERISTIC myWork.myDriver.targetSpeedDown
-			/* long identifier    */ ""
-			/* type               */ VALUE
-			/* ecu address        */ 0x4530A6
-			/* record layout      */ STANDARD_VALUE_U8
-			/* max diff value     */ 0.0
-			/* conversion         */ esdl_ident
-			/* lower limit        */ 0
-			/* upper limit        */ 1
-			BIT_MASK 0x1
-			/begin IF_DATA E_TARGET
-			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1000 4
+			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1000 5
 			/end IF_DATA
 		/end CHARACTERISTIC
 
@@ -277,7 +291,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x453040
+			ECU_ADDRESS 0x454040
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 1
 			/end IF_DATA
@@ -291,7 +305,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x453048
+			ECU_ADDRESS 0x454048
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 3
 			/end IF_DATA
@@ -305,7 +319,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x453050
+			ECU_ADDRESS 0x454050
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 4
 			/end IF_DATA
@@ -319,7 +333,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x453058
+			ECU_ADDRESS 0x454058
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 5
 			/end IF_DATA
@@ -333,7 +347,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x453060
+			ECU_ADDRESS 0x454060
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 7
 			/end IF_DATA
@@ -347,7 +361,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x453068
+			ECU_ADDRESS 0x454068
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 9
 			/end IF_DATA
@@ -361,7 +375,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x453070
+			ECU_ADDRESS 0x454070
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 10
 			/end IF_DATA
@@ -375,7 +389,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x453078
+			ECU_ADDRESS 0x454078
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 11
 			/end IF_DATA
@@ -389,7 +403,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x453080
+			ECU_ADDRESS 0x454080
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 13
 			/end IF_DATA
@@ -403,7 +417,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4530A8
+			ECU_ADDRESS 0x4540B4
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 1 1001 0
 			/end IF_DATA
@@ -417,7 +431,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4530AC
+			ECU_ADDRESS 0x4540B8
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 1 1001 1
 			/end IF_DATA
@@ -431,7 +445,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4530B0
+			ECU_ADDRESS 0x4540BC
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 1 1001 2
 			/end IF_DATA
@@ -445,9 +459,9 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4530B8
+			ECU_ADDRESS 0x4540C4
 			/begin IF_DATA E_TARGET
-			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1001 0
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 0
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -459,9 +473,9 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4530BC
+			ECU_ADDRESS 0x4540C8
 			/begin IF_DATA E_TARGET
-			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1001 1
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 1
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -473,10 +487,10 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4530B4
+			ECU_ADDRESS 0x4540C0
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
-			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1001 2
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 2
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -488,10 +502,10 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4530B5
+			ECU_ADDRESS 0x4540C1
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
-			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1001 3
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 3
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -503,10 +517,10 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4530B6
+			ECU_ADDRESS 0x4540C2
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
-			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1001 4
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 4
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -518,10 +532,53 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4530B7
+			ECU_ADDRESS 0x4540C3
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
-			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1001 5
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 5
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.DriverTest.test
+			/* long identifier    */ ""
+			/* datatype           */ SLONG
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -2147483648
+			/* upper limit        */ 2147483647
+			ECU_ADDRESS 0x435A80
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1000 0
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.driverStimuli.TestCase1.finish
+			/* long identifier    */ ""
+			/* datatype           */ UBYTE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ 0
+			/* upper limit        */ 1
+			ECU_ADDRESS 0x4540B0
+			BIT_MASK 0x1
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 6 1000 0
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.driverStimuli.TestCase1.power
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x4540AC
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 6 1000 1
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -537,9 +594,11 @@
 			""
 			/begin SUB_FUNCTION
 				myCar.myCar
-				myWork.myDriver
 				myWork.myACC
+				myWork.DriverTest
+				myWork.DriverGUI
 				resources.TimeTick
+				myWork.driverStimuli.TestCase1
 			/end SUB_FUNCTION
 		/end FUNCTION
 		
@@ -579,25 +638,6 @@
 			/end LOC_MEASUREMENT
 		/end FUNCTION
 		
-		/begin FUNCTION myWork.myDriver
-			""
-			/begin DEF_CHARACTERISTIC
-				myWork.myDriver.p
-				myWork.myDriver.ccOn
-				myWork.myDriver.ccOff
-				myWork.myDriver.targetSpeedUp
-				myWork.myDriver.targetSpeedDown
-			/end DEF_CHARACTERISTIC
-			/begin OUT_MEASUREMENT
-				resources.DriverMessages.CC_Off
-				resources.DriverMessages.CC_On
-				resources.DriverMessages.brakeDriver
-				resources.DriverMessages.powerDriver
-				resources.DriverMessages.targetSpeedDown
-				resources.DriverMessages.targetSpeedUp
-			/end OUT_MEASUREMENT
-		/end FUNCTION
-		
 		/begin FUNCTION myWork.myACC
 			""
 			/begin IN_MEASUREMENT
@@ -610,8 +650,54 @@
 			/end OUT_MEASUREMENT
 		/end FUNCTION
 		
+		/begin FUNCTION myWork.DriverTest
+			""
+			/begin IN_MEASUREMENT
+				resources.CarMessages.v
+			/end IN_MEASUREMENT
+			/begin OUT_MEASUREMENT
+				resources.DriverMessages.CC_Off
+				resources.DriverMessages.CC_On
+				resources.DriverMessages.brakeDriver
+				resources.DriverMessages.powerDriver
+				resources.DriverMessages.targetSpeedDown
+				resources.DriverMessages.targetSpeedUp
+			/end OUT_MEASUREMENT
+			/begin LOC_MEASUREMENT
+				myWork.DriverTest.test
+			/end LOC_MEASUREMENT
+		/end FUNCTION
+		
+		/begin FUNCTION myWork.DriverGUI
+			""
+			/begin DEF_CHARACTERISTIC
+				myWork.DriverGUI.ccOn
+				myWork.DriverGUI.ccOff
+				myWork.DriverGUI.power
+				myWork.DriverGUI.speedUp
+				myWork.DriverGUI.speedDown
+				myWork.DriverGUI.braking
+			/end DEF_CHARACTERISTIC
+			/begin OUT_MEASUREMENT
+				resources.DriverMessages.CC_Off
+				resources.DriverMessages.CC_On
+				resources.DriverMessages.brakeDriver
+				resources.DriverMessages.powerDriver
+				resources.DriverMessages.targetSpeedDown
+				resources.DriverMessages.targetSpeedUp
+			/end OUT_MEASUREMENT
+		/end FUNCTION
+		
 		/begin FUNCTION resources.TimeTick
 			""
+		/end FUNCTION
+		
+		/begin FUNCTION myWork.driverStimuli.TestCase1
+			""
+			/begin LOC_MEASUREMENT
+				myWork.driverStimuli.TestCase1.finish
+				myWork.driverStimuli.TestCase1.power
+			/end LOC_MEASUREMENT
 		/end FUNCTION
 		
 		/begin RECORD_LAYOUT STANDARD_CURVE_R64R64
@@ -632,12 +718,12 @@
 			/* value              */ FNC_VALUES 1 FLOAT64_IEEE COLUMN_DIR DIRECT
 		/end RECORD_LAYOUT
 		
-		/begin RECORD_LAYOUT STANDARD_VALUE_R32
-			/* value              */ FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
-		/end RECORD_LAYOUT
-		
 		/begin RECORD_LAYOUT STANDARD_VALUE_U8
 			/* value              */ FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+		/end RECORD_LAYOUT
+		
+		/begin RECORD_LAYOUT STANDARD_VALUE_R32
+			/* value              */ FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
 		/end RECORD_LAYOUT
 		
 		/begin GROUP ACC_PC
@@ -646,10 +732,12 @@
 			/begin SUB_GROUP
 				myCar.myCar
 				resources.CarMessages
-				myWork.myDriver
-				resources.DriverMessages
 				myWork.myACC
+				resources.DriverMessages
+				myWork.DriverTest
+				myWork.DriverGUI
 				resources.TimeTick
+				myWork.driverStimuli.TestCase1
 			/end SUB_GROUP
 		/end GROUP
 		
@@ -691,15 +779,8 @@
 			/end REF_MEASUREMENT
 		/end GROUP
 		
-		/begin GROUP myWork.myDriver
+		/begin GROUP myWork.myACC
 			""
-			/begin REF_CHARACTERISTIC
-				myWork.myDriver.p
-				myWork.myDriver.ccOn
-				myWork.myDriver.ccOff
-				myWork.myDriver.targetSpeedUp
-				myWork.myDriver.targetSpeedDown
-			/end REF_CHARACTERISTIC
 		/end GROUP
 		
 		/begin GROUP resources.DriverMessages
@@ -714,12 +795,35 @@
 			/end REF_MEASUREMENT
 		/end GROUP
 		
-		/begin GROUP myWork.myACC
+		/begin GROUP myWork.DriverTest
 			""
+			/begin REF_MEASUREMENT
+				myWork.DriverTest.test
+			/end REF_MEASUREMENT
+		/end GROUP
+		
+		/begin GROUP myWork.DriverGUI
+			""
+			/begin REF_CHARACTERISTIC
+				myWork.DriverGUI.ccOn
+				myWork.DriverGUI.ccOff
+				myWork.DriverGUI.power
+				myWork.DriverGUI.speedUp
+				myWork.DriverGUI.speedDown
+				myWork.DriverGUI.braking
+			/end REF_CHARACTERISTIC
 		/end GROUP
 		
 		/begin GROUP resources.TimeTick
 			""
+		/end GROUP
+		
+		/begin GROUP myWork.driverStimuli.TestCase1
+			""
+			/begin REF_MEASUREMENT
+				myWork.driverStimuli.TestCase1.finish
+				myWork.driverStimuli.TestCase1.power
+			/end REF_MEASUREMENT
 		/end GROUP
 		
 	/end MODULE
