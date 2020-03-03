@@ -15,19 +15,14 @@ blockdiagramSpecification Main {
 		}
 	}
 	subtraction at (301, 106) {
-		inPin connection_2 {
-			bendpoints (70, 0)
+		inPin connection_45 {
+			bendpoints (30, 0), (30, 40)
 		}
 		inPin connection_1 {
 			bendpoints (50, 0), (50, -30)
 		}
 		outPin {
 			connection_10, connection_3
-		}
-	}
-	literal Numeric "100.0" at (181, 93) size (59, 0) {
-		outPin {
-			connection_2
 		}
 	}
 	multiplication at (461, 116) {
@@ -39,7 +34,7 @@ blockdiagramSpecification Main {
 			connection_12
 		}
 	}
-	literal Numeric "0.01" at (381, 153) size (49, 0) {
+	literal Numeric "0.01" at (381, 153) size (69, 0) {
 		outPin {
 			connection_4
 		}
@@ -111,7 +106,7 @@ blockdiagramSpecification Main {
 			connection_15
 		}
 	}
-	literal Numeric "0.01" at (381, 283) size (49, 0) {
+	literal Numeric "0.01" at (381, 283) size (69, 0) {
 		outPin {
 			connection_13
 		}
@@ -169,7 +164,7 @@ blockdiagramSpecification Main {
 			connection_37
 		}
 	}
-	literal Numeric "-100.0" at (941, 473) size (69, 0) {
+	literal Numeric "-100.0" at (941, 473) size (89, 0) {
 		outPin {
 			connection_30
 		}
@@ -210,14 +205,23 @@ blockdiagramSpecification Main {
 			connection_42
 		}
 	}
-	literal Numeric "100.0" at (961, 393) size (59, 0) {
+	literal Numeric "100.0" at (961, 393) size (79, 0) {
 		outPin {
 			connection_39
 		}
 	}
-	literal Numeric "-100.0" at (941, 513) size (69, 0) {
+	literal Numeric "-100.0" at (941, 513) size (89, 0) {
 		outPin {
 			connection_40
+		}
+	}
+	simpleIdentifier v_2 at (191, 65) {
+		label at (0, -1)
+		inPin outPin {
+			connection_45
+		}
+		sequenceCall {
+			inPin
 		}
 	}
 }
