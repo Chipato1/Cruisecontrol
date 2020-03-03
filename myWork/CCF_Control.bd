@@ -1,0 +1,223 @@
+classType myWork.CCF_Control
+blockdiagramSpecification Main {
+	methodBody calc {
+		outPin active {
+			connection_8, connection_41, connection_43
+		}
+	}
+	simpleIdentifier resources.CarMessages.v at (181, 155) {
+		label at (0, -1)
+		outPin {
+			connection_1
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	subtraction at (301, 106) {
+		inPin connection_2 {
+			bendpoints (70, 0)
+		}
+		inPin connection_1 {
+			bendpoints (50, 0), (50, -30)
+		}
+		outPin {
+			connection_10, connection_3
+		}
+	}
+	literal Numeric "100.0" at (181, 93) size (59, 0) {
+		outPin {
+			connection_2
+		}
+	}
+	multiplication at (461, 116) {
+		inPin connection_3
+		inPin connection_4 {
+			bendpoints (10, 0), (10, -20)
+		}
+		outPin {
+			connection_12
+		}
+	}
+	literal Numeric "0.01" at (381, 153) size (49, 0) {
+		outPin {
+			connection_4
+		}
+	}
+	simpleIdentifier resources.CCF_Messages.gaspedal_cc at (1211, 385) {
+		label at (0, -1)
+		inPin connection_44
+		sequenceCall {
+			inPin connection_43
+		}
+	}
+	simpleIdentifier resources.CCF_Messages.brakepedal_cc at (1211, 505) {
+		label at (0, -1)
+		inPin connection_42
+		sequenceCall {
+			inPin connection_41
+		}
+	}
+	greater at (661, 296) {
+		inPin connection_17 {
+			bendpoints (30, 0), (30, 50)
+		}
+		inPin connection_6
+		outPin {
+			connection_19
+		}
+	}
+	literal Numeric "0.0" at (601, 313) size (49, 0) {
+		outPin {
+			connection_6
+		}
+	}
+	addition at (341, 246) {
+		inPin connection_7
+		inPin connection_10
+		outPin {
+			connection_14, connection_9
+		}
+	}
+	simpleIdentifier tmp at (241, 245) {
+		label at (0, -1)
+		inPin connection_9 {
+			bendpoints (0, -50), (-140, -50)
+		}
+		outPin {
+			connection_7
+		}
+		sequenceCall {
+			inPin connection_8
+		}
+	}
+	addition at (581, 236) {
+		inPin connection_12 {
+			bendpoints (60, 0), (60, 110)
+		}
+		inPin connection_15
+		outPin {
+			connection_18, connection_21, connection_22, connection_17
+		}
+	}
+	multiplication at (461, 246) {
+		inPin connection_14 {
+			bendpoints (40, 0), (40, -10)
+		}
+		inPin connection_13 {
+			bendpoints (10, 0), (10, -20)
+		}
+		outPin {
+			connection_15
+		}
+	}
+	literal Numeric "0.01" at (381, 283) size (49, 0) {
+		outPin {
+			connection_13
+		}
+	}
+	less at (661, 416) {
+		inPin connection_18 {
+			bendpoints (30, 0), (30, 170)
+		}
+		inPin connection_16
+		outPin {
+			connection_20
+		}
+	}
+	literal Numeric "0.0" at (601, 433) size (49, 0) {
+		outPin {
+			connection_16
+		}
+	}
+	select integer at (831, 311) size (4, 5) {
+		inPin CASE_CONDITION connection_19
+		namedInPin "default" connection_23
+		namedInPin "1" connection_21 {
+			bendpoints (100, 0), (100, 80)
+		}
+		outPin {
+			connection_36, connection_32
+		}
+	}
+	select integer at (831, 431) size (4, 5) {
+		inPin CASE_CONDITION connection_20
+		namedInPin "default" connection_24
+		namedInPin "1" connection_22 {
+			bendpoints (100, 0), (100, 200)
+		}
+		outPin {
+			connection_38, connection_31
+		}
+	}
+	literal Numeric "0.0" at (771, 343) size (49, 0) {
+		outPin {
+			connection_23
+		}
+	}
+	literal Numeric "0.0" at (771, 463) size (49, 0) {
+		outPin {
+			connection_24
+		}
+	}
+	less at (1021, 456) {
+		inPin connection_31
+		inPin connection_30 {
+			bendpoints (0, 10), (10, 10)
+		}
+		outPin {
+			connection_37
+		}
+	}
+	literal Numeric "-100.0" at (941, 473) size (69, 0) {
+		outPin {
+			connection_30
+		}
+	}
+	literal Numeric "1.0" at (961, 353) size (49, 0) {
+		outPin {
+			connection_29
+		}
+	}
+	greater at (1021, 336) {
+		inPin connection_32
+		inPin connection_29
+		outPin {
+			connection_35
+		}
+	}
+	select integer at (1091, 361) size (4, 5) {
+		inPin CASE_CONDITION connection_35 {
+			bendpoints (50, 0)
+		}
+		namedInPin "default" connection_39
+		namedInPin "1" connection_36 {
+			bendpoints (30, 0), (30, 40)
+		}
+		outPin {
+			connection_44
+		}
+	}
+	select integer at (1091, 481) size (4, 5) {
+		inPin CASE_CONDITION connection_37 {
+			bendpoints (50, 0)
+		}
+		namedInPin "default" connection_40
+		namedInPin "1" connection_38 {
+			bendpoints (30, 0), (30, 40)
+		}
+		outPin {
+			connection_42
+		}
+	}
+	literal Numeric "100.0" at (961, 393) size (59, 0) {
+		outPin {
+			connection_39
+		}
+	}
+	literal Numeric "-100.0" at (941, 513) size (69, 0) {
+		outPin {
+			connection_40
+		}
+	}
+}
