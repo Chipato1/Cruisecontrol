@@ -1,5 +1,5 @@
 package myWork;
-import resources.DriverMessages;
+
 @generated("statemachine")
 type CCF_StatemachineStatemachineStates is enum {
 	passive,
