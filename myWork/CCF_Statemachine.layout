@@ -1,4 +1,4 @@
-Component       myWork.CCF_Statemachine size ( 51 , 29 ) {
+Component         myWork.CCF_Statemachine size ( 51 , 29 ) {
 	labelPosition ( 0 , 1 )
 	methodLayout cCF_StatemachineStatemachineTrigger {
 		pin cCF_StatemachineStatemachineTrigger ( Top , 0 )
@@ -27,8 +27,5 @@ Component       myWork.CCF_Statemachine size ( 51 , 29 ) {
 	}
 	memberLayout v_ist {
 		setPinPosition ( Left , 22 )
-	}
-	memberLayout v_soll {
-		setPinPosition ( Left , 25 )
 	}
 }

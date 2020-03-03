@@ -28,6 +28,8 @@ class CCF_Statemachine {
 	private real v_ist = 0.0;
 	@get
 	private real v_soll = 0.0;
+	@get
+	private boolean CC_active=false;
 
 	@generated("statemachine")
 	public void cCF_StatemachineStatemachineTrigger() triggers CCF_StatemachineStatemachine;
@@ -37,6 +39,9 @@ class CCF_Statemachine {
 		start off;
 
 		state passive {
+			entry{
+				CC_active=false;
+			}
 			transition brakeDriver > 0.0 to off;
 			transition v_ist < v_soll to active;
 			transition CC_Off == true to off;
@@ -44,9 +49,18 @@ class CCF_Statemachine {
 		}
 
 		state active {
+			entry{
+				CC_On=false;
+				CC_active=true;
+			}
 			static {
 				if (targetSpeedUp) {
 					v_soll += 1.0;
+					targetSpeedUp=false;
+				}
+				if (targetSpeedDown) {
+					v_soll -= 1.0;
+					targetSpeedDown=false;
 				}
 			}
 			transition brakeDriver > 0.0 to off;
@@ -57,6 +71,7 @@ class CCF_Statemachine {
 		state off {
 			entry {
 				CC_Off = false;
+				CC_active=false;
 			}
 			transition targetSpeedUp == true to active;
 			transition targetSpeedDown == true to active;
