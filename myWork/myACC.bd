@@ -1,0 +1,119 @@
+classType myWork.myACC
+blockdiagramSpecification Main {
+	methodBody control {
+		outPin active {
+			connection_1
+		}
+	}
+	simpleIdentifier resources.DriverMessages.powerDriver at (71, 105) {
+		label at (0, -1)
+		outPin {
+			connection_10, connection_3
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.brakeDriver at (71, 185) {
+		label at (0, -1)
+		outPin {
+			connection_12, connection_7
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.CarMessages.power at (531, 75) {
+		label at (0, -1)
+		inPin connection_10 {
+			bendpoints (0, -30), (350, -30)
+		}
+		sequenceCall {
+			inPin connection_9 {
+				bendpoints (70, 0), (70, -100)
+			}
+		}
+	}
+	simpleIdentifier resources.CarMessages.brake at (531, 235) {
+		label at (0, -1)
+		inPin connection_12 {
+			bendpoints (0, 50), (350, 50)
+		}
+		sequenceCall {
+			inPin connection_11 {
+				bendpoints (70, 0), (70, 60)
+			}
+		}
+	}
+	ifElse at (331, 151) {
+		inPin connection_2
+		ifControlFlowOutPin {
+			connection_9, connection_11
+		}
+		elseControlFlowOutPin {
+			connection_15, connection_13
+		}
+		sequenceCall {
+			inPin connection_1
+		}
+	}
+	or at (241, 146) {
+		inPin connection_4 {
+			bendpoints (10, 0), (10, 30)
+		}
+		inPin connection_8 {
+			bendpoints (10, 0), (10, -10)
+		}
+		outPin {
+			connection_2
+		}
+	}
+	greater at (181, 106) {
+		inPin connection_3
+		inPin connection_5 {
+			bendpoints (30, 0), (30, -20)
+		}
+		outPin {
+			connection_4
+		}
+	}
+	literal Numeric "0.0" at (71, 143) size (49, 0) {
+		outPin {
+			connection_6, connection_5
+		}
+	}
+	less at (181, 166) {
+		inPin connection_6 {
+			bendpoints (30, 0), (30, 10), (60, 10)
+		}
+		inPin connection_7
+		outPin {
+			connection_8
+		}
+	}
+	simpleIdentifier resources.CarMessages.power at (531, 345) {
+		label at (0, -1)
+		inPin connection_16 {
+			bendpoints (20, 0), (20, -50)
+		}
+		sequenceCall {
+			inPin connection_15 {
+				bendpoints (0, 140)
+			}
+		}
+	}
+	simpleIdentifier resources.CarMessages.brake at (531, 395) {
+		label at (0, -1)
+		inPin connection_14
+		sequenceCall {
+			inPin connection_13 {
+				bendpoints (0, 190)
+			}
+		}
+	}
+	literal Numeric "0.0" at (421, 393) size (49, 0) {
+		outPin {
+			connection_16, connection_14
+		}
+	}
+}

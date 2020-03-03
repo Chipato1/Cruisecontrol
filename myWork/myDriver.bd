@@ -1,0 +1,36 @@
+classType myWork.myDriver
+blockdiagramSpecification Main {
+	methodBody drive {
+		outPin active {
+			connection_5, connection_6
+		}
+	}
+	simpleIdentifier p at (561, 105) {
+		label at (0, -1)
+		outPin {
+			connection_2
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	literal Numeric "0.0" at (561, 193) size (49, 0) {
+		outPin {
+			connection_4
+		}
+	}
+	simpleIdentifier resources.DriverMessages.powerDriver at (731, 105) {
+		label at (0, -1)
+		inPin connection_2
+		sequenceCall {
+			inPin connection_5
+		}
+	}
+	simpleIdentifier resources.DriverMessages.brakeDriver at (731, 195) {
+		label at (0, -1)
+		inPin connection_4
+		sequenceCall {
+			inPin connection_6
+		}
+	}
+}

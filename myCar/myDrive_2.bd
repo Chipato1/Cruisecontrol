@@ -1,0 +1,426 @@
+classType myCar.myDrive_2
+blockdiagramSpecification Main {
+	methodBody vCar {
+		outPin active {
+			connection_2, connection_11, connection_32, connection_16, connection_48, connection_36, connection_29, connection_3, connection_1
+		}
+	}
+	simpleIdentifier BrakeMomentum at (181, 31) {
+		label at (0, 1)
+		inPin connection_6 {
+			bendpoints (10, 0)
+		}
+		outPin {
+			connection_10
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	methodArgumentIdentifier vCar.brakeCtrl at (71, 45) {
+		label at (0, -1)
+		outPin {
+			connection_6
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	literal Numeric "3.6" at (451, 163) size (49, 0) {
+		outPin {
+			connection_34
+		}
+	}
+	addition at (401, 86) {
+		inPin connection_10 {
+			bendpoints (140, 0), (140, 40)
+		}
+		inPin connection_4 {
+			bendpoints (10, 0), (10, -10)
+		}
+		inPin connection_42 {
+			bendpoints (70, 0), (70, -50)
+		}
+		inPin connection_52 {
+			bendpoints (0, -100)
+		}
+		outPin {
+			connection_26
+		}
+	}
+	simpleIdentifier EngineMomentum at (241, 91) {
+		label at (0, 1)
+		inPin connection_7 {
+			bendpoints (120, 0)
+		}
+		inPin connection_8 {
+			bendpoints (50, 0), (50, -50)
+		}
+		outPin {
+			connection_12
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	methodArgumentIdentifier vCar.powerCtrl at (81, 95) {
+		label at (0, -1)
+		outPin {
+			connection_7
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	multiplication at (551, 106) {
+		inPin connection_26 {
+			bendpoints (50, 0)
+		}
+		inPin connection_28 {
+			bendpoints (10, 0), (10, -20)
+		}
+		inPin connection_34 {
+			bendpoints (20, 0), (20, -40)
+		}
+		outPin {
+			connection_31
+		}
+	}
+	simpleIdentifier momentum at (301, 105) {
+		label at (0, -1)
+		inPin connection_12 {
+			bendpoints (0, 0)
+		}
+		outPin {
+			connection_4
+		}
+		sequenceCall at (0, -14) {
+			inPin connection_11
+		}
+	}
+	simpleIdentifier v at (731, 125) {
+		label at (20, -1)
+		inPin connection_30
+		outPin {
+			connection_27
+		}
+		sequenceCall at (-10, -14) {
+			inPin connection_29
+		}
+	}
+	addition at (631, 116) {
+		inPin connection_31 {
+			bendpoints (0, 0)
+		}
+		inPin connection_27 {
+			bendpoints (40, 0), (40, 30), (-150, 30)
+		}
+		outPin {
+			connection_30
+		}
+	}
+	simpleIdentifier v at (61, 165) {
+		label at (20, -1)
+		inPin outPin {
+			connection_9, connection_8
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	simpleIdentifier AirFriction at (241, 151) {
+		label at (0, 1)
+		inPin connection_9 {
+			bendpoints (50, 0), (50, 0)
+		}
+		outPin {
+			connection_42
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	freeComment at (561, 171) size (56, 21) {
+		"General idea is to focus on force balance and therby neglect \r\ninertial effects (mass factors). Hence, engine momentum is \r\nbalance by braking, air friction and slope (landscape effect).\r\n\r\nVelocity here is in km/h but all accelarations are in m/s^2.\r\n\r\nThe track is understood to be a closed 1000m cycle.\r\n\r\nAlthough theoretically possible, no negative velocities are allowed - \r\nthe driver is expected to use a static brake here.\r\n\r\nEffects of gear shift and clutch are also neglected here."
+	}
+	literal Numeric "9.81" at (251, 213) size (49, 0) {
+		outPin {
+			connection_50
+		}
+	}
+	multiplication at (341, 216) {
+		inPin connection_50 {
+			bendpoints (0, 0)
+		}
+		inPin connection_51 {
+			bendpoints (0, -10)
+		}
+		outPin {
+			connection_52
+		}
+	}
+	simpleIdentifier h at (31, 245) {
+		label at (20, -1)
+		inPin outPin {
+			connection_47
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	simpleIdentifier dh at (251, 255) {
+		label at (10, -1)
+		inPin connection_49
+		outPin {
+			connection_46
+		}
+		sequenceCall at (-30, -14) {
+			inPin connection_48
+		}
+	}
+	subtraction at (181, 246) {
+		inPin connection_47 {
+			bendpoints (10, 0), (10, 0)
+		}
+		inPin connection_35 {
+			bendpoints (10, 0), (10, -20)
+		}
+		outPin {
+			connection_49
+		}
+	}
+	division at (321, 256) {
+		inPin connection_46 {
+			bendpoints (10, 0)
+		}
+		inPin connection_45 {
+			bendpoints (10, 0), (10, -100)
+		}
+		outPin {
+			connection_51
+		}
+	}
+	simpleIdentifier Landscape at (111, 291) {
+		label at (0, 1)
+		inPin connection_25 {
+			bendpoints (10, 0)
+		}
+		outPin {
+			connection_37, connection_35
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier s at (31, 305) {
+		label at (20, -1)
+		inPin outPin {
+			connection_25
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	simpleIdentifier h at (251, 305) {
+		label at (20, -1)
+		inPin connection_37 {
+			bendpoints (80, 0)
+		}
+		outPin sequenceCall at (-30, -14) {
+			inPin connection_36
+		}
+	}
+	simpleIdentifier v at (41, 355) {
+		label at (20, -1)
+		inPin outPin {
+			connection_14
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	simpleIdentifier ds at (261, 375) {
+		label at (10, -1)
+		inPin connection_33
+		outPin {
+			connection_45, connection_44
+		}
+		sequenceCall at (-10, -14) {
+			inPin connection_32
+		}
+	}
+	simpleIdentifier s at (381, 385) {
+		label at (20, -1)
+		inPin connection_17
+		outPin {
+			connection_13
+		}
+		sequenceCall at (-10, -14) {
+			inPin connection_16
+		}
+	}
+	simpleIdentifier v at (491, 365) {
+		label at (20, -1)
+		inPin outPin {
+			connection_22, connection_21
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	return at (701, 365) {
+		label at (-20, 0)
+		inPin connection_21 {
+			bendpoints (10, 0), (160, 0)
+		}
+		sequenceCall at (-10, -14) {
+			inPin connection_1
+		}
+	}
+	multiplication at (101, 356) {
+		inPin connection_14 {
+			bendpoints (10, 0)
+		}
+		inPin connection_5 {
+			bendpoints (10, 0)
+		}
+		outPin {
+			connection_15
+		}
+	}
+	division at (201, 366) {
+		inPin connection_15
+		inPin connection_41
+		outPin {
+			connection_33
+		}
+	}
+	addition at (331, 376) {
+		inPin connection_44 {
+			bendpoints (10, 0)
+		}
+		inPin connection_13 {
+			bendpoints (40, 0), (40, 40), (-100, 40)
+		}
+		outPin {
+			connection_17
+		}
+	}
+	less at (571, 396) {
+		inPin connection_22 {
+			bendpoints (30, 0), (30, 30)
+		}
+		inPin connection_38 {
+			bendpoints (0, -20)
+		}
+		outPin {
+			connection_43
+		}
+	}
+	if at (641, 401) {
+		inPin connection_43 {
+			bendpoints (20, 0)
+		}
+		ifControlFlowOutPin {
+			connection_54
+		}
+		sequenceCall at (-10, -14) {
+			inPin connection_3
+		}
+	}
+	literal Numeric "3.6" at (151, 413) size (49, 0) {
+		outPin {
+			connection_41
+		}
+	}
+	literal Numeric "0.0" at (491, 433) size (49, 0) {
+		outPin {
+			connection_40, connection_38
+		}
+	}
+	simpleIdentifier v at (711, 435) {
+		label at (20, -1)
+		inPin connection_40 {
+			bendpoints (0, 0)
+		}
+		outPin sequenceCall at (-10, -14) {
+			inPin connection_54 {
+				bendpoints (10, 0)
+			}
+		}
+	}
+	simpleIdentifier s at (41, 455) {
+		label at (20, -1)
+		inPin outPin {
+			connection_18
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	greater at (161, 456) {
+		inPin connection_18 {
+			bendpoints (10, 0)
+		}
+		inPin connection_20 {
+			bendpoints (10, 0)
+		}
+		outPin {
+			connection_19
+		}
+	}
+	if at (261, 461) {
+		inPin connection_19 {
+			bendpoints (50, 0)
+		}
+		ifControlFlowOutPin {
+			connection_53
+		}
+		sequenceCall at (-20, -14) {
+			inPin connection_2
+		}
+	}
+	literal Numeric "0.0" at (381, 473) size (49, 0) {
+		outPin {
+			connection_24
+		}
+	}
+	simpleIdentifier TrackSize at (81, 475) {
+		label at (0, -1)
+		outPin {
+			connection_20
+		}
+		sequenceCall at (-10, -14) {
+			inPin
+		}
+	}
+	simpleIdentifier s at (471, 475) {
+		label at (20, -1)
+		inPin connection_24 {
+			bendpoints (40, 0)
+		}
+		outPin sequenceCall at (-10, -14) {
+			inPin connection_53 {
+				bendpoints (0, 0)
+			}
+		}
+	}
+	simpleIdentifier resources.TimeTick.dTs at (451, 135) {
+		label at (0, -1)
+		inPin outPin {
+			connection_28
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.TimeTick.dTs at (41, 395) {
+		label at (0, -1)
+		inPin outPin {
+			connection_5
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+}
