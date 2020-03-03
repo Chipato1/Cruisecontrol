@@ -2,7 +2,7 @@ package myWork;
 import resources.CarMessages;
 import resources.CCF_Messages;
 
-class CCF_Control
+static class CCF_Control
 reads CarMessages.v
 writes CCF_Messages.gaspedal_cc, CCF_Messages.brakepedal_cc {
 	real v_soll;

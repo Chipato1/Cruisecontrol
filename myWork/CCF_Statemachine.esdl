@@ -13,15 +13,20 @@ class CCF_Statemachine {
 	@set
 	private real brakeDriver = 0.0;
 	@set
+	@get
 	private boolean CC_Off = false;
 	@set
+	@get
 	private boolean CC_On = false;
 	@set
+	@get
 	private boolean targetSpeedUp = false;
 	@set
+	@get
 	private boolean targetSpeedDown = false;
 	@set
 	private real v_ist = 0.0;
+	@get
 	private real v_soll = 0.0;
 
 	@generated("statemachine")

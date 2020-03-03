@@ -2,7 +2,7 @@ classType myWork.CCF_Statemachine_BD
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_33, connection_34, connection_35, connection_37, connection_36, connection_38, connection_39, connection_40
+			connection_41, connection_42, connection_43, connection_44, connection_63, connection_65, connection_67, connection_69, connection_71, connection_73, connection_75, connection_77
 		}
 	}
 	simpleIdentifier resources.DriverMessages.powerDriver at (191, 285) {
@@ -23,42 +23,6 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	simpleIdentifier resources.DriverMessages.CC_On at (191, 375) {
-		label at (-190, -21)
-		outPin {
-			connection_14
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier resources.DriverMessages.CC_Off at (191, 345) {
-		label at (-190, -21)
-		outPin {
-			connection_18
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier resources.DriverMessages.targetSpeedUp at (191, 405) {
-		label at (-270, -21)
-		outPin {
-			connection_20
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier resources.DriverMessages.targetSpeedDown at (191, 435) {
-		label at (-300, -21)
-		outPin {
-			connection_22
-		}
-		sequenceCall {
-			inPin
-		}
-	}
 	simpleIdentifier resources.CarMessages.v at (191, 465) {
 		label at (-90, -21)
 		outPin {
@@ -72,50 +36,110 @@ blockdiagramSpecification Main {
 		label at (0, 1)
 		methodCall myWork.CCF_Statemachine.cCF_StatemachineStatemachineTrigger {
 			methodVoidPin at (top, 0) sequenceCall at (-14, -68) {
-				inPin connection_33
+				inPin connection_41
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.powerDriver) {
 			argumentPin at (left, 4) connection_3
-			sequenceCall at (-170, -224) {
-				inPin connection_34
+			sequenceCall at (-350, -104) {
+				inPin connection_42
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.brakeDriver) {
 			argumentPin at (left, 7) connection_5
-			sequenceCall at (-330, -264) {
-				inPin connection_35
+			sequenceCall at (-230, -224) {
+				inPin connection_43
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.CC_Off) {
-			argumentPin at (left, 10) connection_18
-			sequenceCall at (-260, -224) {
-				inPin connection_36
+			argumentPin at (left, 10) connection_78 {
+				bendpoints (110, 0), (110, 320), (-980, 320), (-980, 40)
+			}
+			returnPin at (right, 6) {
+				connection_70
+			}
+			sequenceCall at (40, -264) {
+				inPin connection_77
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.CC_On) {
-			argumentPin at (left, 13) connection_14
-			sequenceCall at (-350, -254) {
-				inPin connection_37
+			argumentPin at (left, 13) connection_76 {
+				bendpoints (70, 0), (70, 260), (-950, 260), (-950, 30)
+			}
+			returnPin at (right, 10) {
+				connection_68
+			}
+			sequenceCall at (150, -304) {
+				inPin connection_75
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.targetSpeedUp) {
-			argumentPin at (left, 16) connection_20
-			sequenceCall at (-170, -284) {
-				inPin connection_38
+			argumentPin at (left, 16) connection_74 {
+				bendpoints (40, 0), (40, 190), (-920, 190), (-920, 10)
+			}
+			returnPin at (right, 15) {
+				connection_66
+			}
+			sequenceCall at (-200, -234) {
+				inPin connection_73
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.targetSpeedDown) {
-			argumentPin at (left, 19) connection_22
-			sequenceCall at (-350, -254) {
-				inPin connection_39
+			argumentPin at (left, 19) connection_72 {
+				bendpoints (0, 110), (-890, 110), (-890, -20)
+			}
+			returnPin at (right, 21) {
+				connection_64
+			}
+			sequenceCall at (-70, -364) {
+				inPin connection_71
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.v_ist) {
 			argumentPin at (left, 22) connection_24
-			sequenceCall at (-150, -284) {
-				inPin connection_40
+			sequenceCall at (-320, -364) {
+				inPin connection_44
 			}
+		}
+	}
+	simpleIdentifier resources.DriverMessages.targetSpeedUp at (921, 395) {
+		label at (180, -21)
+		inPin connection_66
+		outPin {
+			connection_74
+		}
+		sequenceCall at (30, -284) {
+			inPin connection_65
+		}
+	}
+	simpleIdentifier resources.DriverMessages.targetSpeedDown at (921, 455) {
+		label at (170, -21)
+		inPin connection_64
+		outPin {
+			connection_72
+		}
+		sequenceCall at (-40, -344) {
+			inPin connection_63
+		}
+	}
+	simpleIdentifier resources.DriverMessages.CC_On at (921, 345) {
+		label at (180, -21)
+		inPin connection_68
+		outPin {
+			connection_76
+		}
+		sequenceCall at (100, -234) {
+			inPin connection_67
+		}
+	}
+	simpleIdentifier resources.DriverMessages.CC_Off at (921, 305) {
+		label at (180, -21)
+		inPin connection_70
+		outPin {
+			connection_78
+		}
+		sequenceCall at (170, -194) {
+			inPin connection_69
 		}
 	}
 }
