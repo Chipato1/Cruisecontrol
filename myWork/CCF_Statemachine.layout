@@ -1,0 +1,34 @@
+Component       myWork.CCF_Statemachine size ( 51 , 29 ) {
+	labelPosition ( 0 , 1 )
+	methodLayout cCF_StatemachineStatemachineTrigger {
+		pin cCF_StatemachineStatemachineTrigger ( Top , 0 )
+	}
+	memberLayout powerDriver {
+		setPinPosition ( Left , 4 )
+	}
+	memberLayout brakeDriver {
+		setPinPosition ( Left , 7 )
+	}
+	memberLayout CC_Off {
+		setPinPosition ( Left , 10 )
+		getPinPosition ( Right , 6 )
+	}
+	memberLayout CC_On {
+		setPinPosition ( Left , 13 )
+		getPinPosition ( Right , 10 )
+	}
+	memberLayout targetSpeedUp {
+		setPinPosition ( Left , 16 )
+		getPinPosition ( Right , 15 )
+	}
+	memberLayout targetSpeedDown {
+		setPinPosition ( Left , 19 )
+		getPinPosition ( Right , 21 )
+	}
+	memberLayout v_ist {
+		setPinPosition ( Left , 22 )
+	}
+	memberLayout v_soll {
+		setPinPosition ( Left , 25 )
+	}
+}
