@@ -1,5 +1,4 @@
 package myWork;
-
 @generated("statemachine")
 type CCF_StatemachineStatemachineStates is enum {
 	passive,
@@ -32,6 +31,8 @@ class CCF_Statemachine {
 	private real v_soll = 0.0;
 	@get
 	private boolean CC_active = false;
+	@get
+	real currentState = 0.0;
 
 	@generated("statemachine")
 	public void cCF_StatemachineStatemachineTrigger() triggers CCF_StatemachineStatemachine;
@@ -42,6 +43,7 @@ class CCF_Statemachine {
 
 		state passive {
 			entry {
+				currentState=1.0;
 				CC_active = false;
 			}
 			transition brakeDriver > 0.0 to off;
@@ -52,6 +54,7 @@ class CCF_Statemachine {
 
 		state active {
 			entry {
+				currentState=2.0;
 				CC_On = false;
 				CC_active = true;
 			}
@@ -72,6 +75,7 @@ class CCF_Statemachine {
 
 		state off {
 			entry {
+				currentState=0.0;
 				CC_Off = false;
 				CC_active = false;
 			}
