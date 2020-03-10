@@ -57,6 +57,7 @@ class CCF_Statemachine {
 				currentState=2.0;
 				CC_On = false;
 				CC_active = true;
+				v_soll=v_ist;
 			}
 			static {
 				if (targetSpeedUp) {
