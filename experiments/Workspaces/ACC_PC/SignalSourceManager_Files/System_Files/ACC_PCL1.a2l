@@ -56,7 +56,7 @@
 		        QP_BLOB 1
 		    /end SOURCE
 		    /begin TP_BLOB
-		         /* programm id */ 4152384427
+		         /* programm id */ 4152381397
 		         /* target id   */ 7
 		         /*             */ 0 2 0
 		    /end TP_BLOB
@@ -88,7 +88,7 @@
 		/begin CHARACTERISTIC myCar.myCar.myVehicle.AirFriction
 			/* long identifier    */ ""
 			/* type               */ CURVE
-			/* ecu address        */ 0x435008
+			/* ecu address        */ 0x435208
 			/* record layout      */ STANDARD_CURVE_R64R64
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
@@ -110,7 +110,7 @@
 		/begin CHARACTERISTIC myCar.myCar.myVehicle.BrakeMomentum
 			/* long identifier    */ ""
 			/* type               */ CURVE
-			/* ecu address        */ 0x435070
+			/* ecu address        */ 0x435270
 			/* record layout      */ STANDARD_CURVE_R64R64
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
@@ -132,7 +132,7 @@
 		/begin CHARACTERISTIC myCar.myCar.myVehicle.EngineMomentum
 			/* long identifier    */ ""
 			/* type               */ MAP
-			/* ecu address        */ 0x4350D8
+			/* ecu address        */ 0x4352D8
 			/* record layout      */ STANDARD_MAP_R64R64R64
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
@@ -162,7 +162,7 @@
 		/begin CHARACTERISTIC myCar.myCar.myVehicle.Landscape
 			/* long identifier    */ ""
 			/* type               */ CURVE
-			/* ecu address        */ 0x435260
+			/* ecu address        */ 0x435460
 			/* record layout      */ STANDARD_CURVE_R64R64
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
@@ -184,7 +184,7 @@
 		/begin CHARACTERISTIC myCar.myCar.myVehicle.TrackSize
 			/* long identifier    */ ""
 			/* type               */ VALUE
-			/* ecu address        */ 0x435000
+			/* ecu address        */ 0x435200
 			/* record layout      */ STANDARD_VALUE_R64
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
@@ -198,7 +198,7 @@
 		/begin CHARACTERISTIC myWork.DriverGUI.ccOn
 			/* long identifier    */ ""
 			/* type               */ VALUE
-			/* ecu address        */ 0x4540A9
+			/* ecu address        */ 0x454181
 			/* record layout      */ STANDARD_VALUE_U8
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
@@ -206,14 +206,14 @@
 			/* upper limit        */ 1
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
-			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1000 0
+			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 7 1000 0
 			/end IF_DATA
 		/end CHARACTERISTIC
 
 		/begin CHARACTERISTIC myWork.DriverGUI.ccOff
 			/* long identifier    */ ""
 			/* type               */ VALUE
-			/* ecu address        */ 0x4540A8
+			/* ecu address        */ 0x454180
 			/* record layout      */ STANDARD_VALUE_U8
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
@@ -221,28 +221,28 @@
 			/* upper limit        */ 1
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
-			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1000 1
+			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 7 1000 1
 			/end IF_DATA
 		/end CHARACTERISTIC
 
 		/begin CHARACTERISTIC myWork.DriverGUI.power
 			/* long identifier    */ ""
 			/* type               */ VALUE
-			/* ecu address        */ 0x4540A4
+			/* ecu address        */ 0x45417C
 			/* record layout      */ STANDARD_VALUE_R32
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
 			/begin IF_DATA E_TARGET
-			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1000 2
+			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 7 1000 2
 			/end IF_DATA
 		/end CHARACTERISTIC
 
 		/begin CHARACTERISTIC myWork.DriverGUI.speedUp
 			/* long identifier    */ ""
 			/* type               */ VALUE
-			/* ecu address        */ 0x4540AB
+			/* ecu address        */ 0x454183
 			/* record layout      */ STANDARD_VALUE_U8
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
@@ -250,14 +250,14 @@
 			/* upper limit        */ 1
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
-			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1000 3
+			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 7 1000 3
 			/end IF_DATA
 		/end CHARACTERISTIC
 
 		/begin CHARACTERISTIC myWork.DriverGUI.speedDown
 			/* long identifier    */ ""
 			/* type               */ VALUE
-			/* ecu address        */ 0x4540AA
+			/* ecu address        */ 0x454182
 			/* record layout      */ STANDARD_VALUE_U8
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
@@ -265,21 +265,21 @@
 			/* upper limit        */ 1
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
-			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1000 4
+			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 7 1000 4
 			/end IF_DATA
 		/end CHARACTERISTIC
 
 		/begin CHARACTERISTIC myWork.DriverGUI.braking
 			/* long identifier    */ ""
 			/* type               */ VALUE
-			/* ecu address        */ 0x4540A0
+			/* ecu address        */ 0x454178
 			/* record layout      */ STANDARD_VALUE_R32
 			/* max diff value     */ 0.0
 			/* conversion         */ esdl_ident
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
 			/begin IF_DATA E_TARGET
-			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1000 5
+			    DP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 7 1000 5
 			/end IF_DATA
 		/end CHARACTERISTIC
 
@@ -291,7 +291,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x454040
+			ECU_ADDRESS 0x454100
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 1
 			/end IF_DATA
@@ -305,7 +305,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x454048
+			ECU_ADDRESS 0x454108
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 3
 			/end IF_DATA
@@ -319,7 +319,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x454050
+			ECU_ADDRESS 0x454110
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 4
 			/end IF_DATA
@@ -333,7 +333,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x454058
+			ECU_ADDRESS 0x454118
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 5
 			/end IF_DATA
@@ -347,7 +347,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x454060
+			ECU_ADDRESS 0x454120
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 7
 			/end IF_DATA
@@ -361,7 +361,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x454068
+			ECU_ADDRESS 0x454128
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 9
 			/end IF_DATA
@@ -375,7 +375,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x454070
+			ECU_ADDRESS 0x454130
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 10
 			/end IF_DATA
@@ -389,7 +389,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x454078
+			ECU_ADDRESS 0x454138
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 11
 			/end IF_DATA
@@ -403,7 +403,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -1.7976931348623157E+308
 			/* upper limit        */ 1.7976931348623157E+308
-			ECU_ADDRESS 0x454080
+			ECU_ADDRESS 0x454140
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 0 1000 0 1000 13
 			/end IF_DATA
@@ -417,7 +417,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4540B4
+			ECU_ADDRESS 0x45418C
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 1 1001 0
 			/end IF_DATA
@@ -431,7 +431,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4540B8
+			ECU_ADDRESS 0x454190
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 1 1001 1
 			/end IF_DATA
@@ -445,7 +445,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4540BC
+			ECU_ADDRESS 0x454194
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 1 1001 2
 			/end IF_DATA
@@ -459,7 +459,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4540C4
+			ECU_ADDRESS 0x4541A4
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 0
 			/end IF_DATA
@@ -473,7 +473,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4540C8
+			ECU_ADDRESS 0x4541A8
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 1
 			/end IF_DATA
@@ -487,7 +487,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4540C0
+			ECU_ADDRESS 0x4541A0
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 2
@@ -502,7 +502,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4540C1
+			ECU_ADDRESS 0x4541A1
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 3
@@ -517,7 +517,7 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4540C2
+			ECU_ADDRESS 0x4541A2
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 4
@@ -532,10 +532,212 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4540C3
+			ECU_ADDRESS 0x4541A3
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
 			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 2 1001 5
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.sm
+			/* long identifier    */ ""
+			/* datatype           */ UBYTE
+			/* conversion         */ esdl_myWork_CCF_StatemachineStatemachineStates
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ 0
+			/* upper limit        */ 2
+			ECU_ADDRESS 0x454173
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 3 1000 0 1000 0
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.powerDriver
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x454164
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 3 1000 0 1000 1
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.brakeDriver
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x454160
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 3 1000 0 1000 2
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.CC_Off
+			/* long identifier    */ ""
+			/* datatype           */ UBYTE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ 0
+			/* upper limit        */ 1
+			ECU_ADDRESS 0x454170
+			BIT_MASK 0x1
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 3 1000 0 1000 3
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.CC_On
+			/* long identifier    */ ""
+			/* datatype           */ UBYTE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ 0
+			/* upper limit        */ 1
+			ECU_ADDRESS 0x454171
+			BIT_MASK 0x1
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 3 1000 0 1000 4
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.targetSpeedUp
+			/* long identifier    */ ""
+			/* datatype           */ UBYTE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ 0
+			/* upper limit        */ 1
+			ECU_ADDRESS 0x454175
+			BIT_MASK 0x1
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 3 1000 0 1000 5
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.targetSpeedDown
+			/* long identifier    */ ""
+			/* datatype           */ UBYTE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ 0
+			/* upper limit        */ 1
+			ECU_ADDRESS 0x454174
+			BIT_MASK 0x1
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 3 1000 0 1000 6
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.v_ist
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x454168
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 3 1000 0 1000 7
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.v_soll
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x45416C
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 3 1000 0 1000 8
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.CC_active
+			/* long identifier    */ ""
+			/* datatype           */ UBYTE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ 0
+			/* upper limit        */ 1
+			ECU_ADDRESS 0x454172
+			BIT_MASK 0x1
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 5 1001 0 1001 0 1001 3 1000 0 1000 9
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT resources.CCF_Messages.gaspedal_cc
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x454198
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1001 0
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT resources.CCF_Messages.brakepedal_cc
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x45419C
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 4 1001 1
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT resources.SMMessages.vTarget
+			/* long identifier    */ ""
+			/* datatype           */ FLOAT32_IEEE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ -3.4028234663852886E+38
+			/* upper limit        */ 3.4028234663852886E+38
+			ECU_ADDRESS 0x4541B0
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 5 1001 0
+			/end IF_DATA
+		/end MEASUREMENT
+
+		/begin MEASUREMENT resources.SMMessages.ccActive
+			/* long identifier    */ ""
+			/* datatype           */ UBYTE
+			/* conversion         */ esdl_ident
+			/* resolution         */ 1
+			/* accuracy           */ 100.0
+			/* lower limit        */ 0
+			/* upper limit        */ 1
+			ECU_ADDRESS 0x4541AC
+			BIT_MASK 0x1
+			/begin IF_DATA E_TARGET
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 5 1001 1
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -547,9 +749,9 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -2147483648
 			/* upper limit        */ 2147483647
-			ECU_ADDRESS 0x435A80
+			ECU_ADDRESS 0x435C80
 			/begin IF_DATA E_TARGET
-			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 3 1000 0
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 6 1000 0
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -561,10 +763,10 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ 0
 			/* upper limit        */ 1
-			ECU_ADDRESS 0x4540B0
+			ECU_ADDRESS 0x454188
 			BIT_MASK 0x1
 			/begin IF_DATA E_TARGET
-			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 6 1000 0
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 9 1000 0
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -576,9 +778,9 @@
 			/* accuracy           */ 100.0
 			/* lower limit        */ -3.4028234663852886E+38
 			/* upper limit        */ 3.4028234663852886E+38
-			ECU_ADDRESS 0x4540AC
+			ECU_ADDRESS 0x454184
 			/begin IF_DATA E_TARGET
-			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 6 1000 1
+			    KP_BLOB 0xFFFFFFFF 0xFFFFFFFF 4 1001 0 1001 0 1001 9 1000 1
 			/end IF_DATA
 		/end MEASUREMENT
 
@@ -590,11 +792,30 @@
 			/* coeffs             */ COEFFS 0 1 0 0 0 1
 		/end COMPU_METHOD
 		
+		/begin COMPU_METHOD esdl_myWork_CCF_StatemachineStatemachineStates
+			/* long identifier    */ ""
+			/* type               */ TAB_VERB
+			/* format             */ "%12.4"
+			/* unit               */ ""
+			/* compu_tab_ref      */ COMPU_TAB_REF esdl_myWork_CCF_StatemachineStatemachineStates_vtab
+		/end COMPU_METHOD
+		
+		/begin COMPU_VTAB esdl_myWork_CCF_StatemachineStatemachineStates_vtab
+			/* long identifier    */ ""
+			/* type               */ TAB_VERB
+			/* number value pairs */ 3 
+			/* value pair         */ 2 "passive"
+			/* value pair         */ 1 "active"
+			/* value pair         */ 0 "off"
+			/* default value      */ DEFAULT_VALUE "Error"
+		/end COMPU_VTAB 
+		
 		/begin FUNCTION ACC_PC
 			""
 			/begin SUB_FUNCTION
 				myCar.myCar
 				myWork.myACC
+				myWork.CCF_Statemachine_BD
 				myWork.DriverTest
 				myWork.DriverGUI
 				resources.TimeTick
@@ -648,6 +869,48 @@
 				resources.CarMessages.brake
 				resources.CarMessages.power
 			/end OUT_MEASUREMENT
+		/end FUNCTION
+		
+		/begin FUNCTION myWork.CCF_Statemachine_BD
+			""
+			/begin IN_MEASUREMENT
+				resources.CarMessages.v
+				resources.DriverMessages.CC_Off
+				resources.DriverMessages.CC_On
+				resources.DriverMessages.brakeDriver
+				resources.DriverMessages.powerDriver
+				resources.DriverMessages.targetSpeedDown
+				resources.DriverMessages.targetSpeedUp
+			/end IN_MEASUREMENT
+			/begin OUT_MEASUREMENT
+				resources.CCF_Messages.brakepedal_cc
+				resources.CCF_Messages.gaspedal_cc
+				resources.DriverMessages.CC_Off
+				resources.DriverMessages.CC_On
+				resources.DriverMessages.targetSpeedDown
+				resources.DriverMessages.targetSpeedUp
+				resources.SMMessages.ccActive
+				resources.SMMessages.vTarget
+			/end OUT_MEASUREMENT
+			/begin SUB_FUNCTION
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance
+			/end SUB_FUNCTION
+		/end FUNCTION
+		
+		/begin FUNCTION myWork.CCF_Statemachine_BD.CCF_Statemachine_instance
+			""
+			/begin LOC_MEASUREMENT
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.CC_Off
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.CC_On
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.CC_active
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.brakeDriver
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.powerDriver
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.sm
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.targetSpeedDown
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.targetSpeedUp
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.v_ist
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.v_soll
+			/end LOC_MEASUREMENT
 		/end FUNCTION
 		
 		/begin FUNCTION myWork.DriverTest
@@ -734,6 +997,9 @@
 				resources.CarMessages
 				myWork.myACC
 				resources.DriverMessages
+				myWork.CCF_Statemachine_BD
+				resources.CCF_Messages
+				resources.SMMessages
 				myWork.DriverTest
 				myWork.DriverGUI
 				resources.TimeTick
@@ -792,6 +1058,45 @@
 				resources.DriverMessages.powerDriver
 				resources.DriverMessages.targetSpeedDown
 				resources.DriverMessages.targetSpeedUp
+			/end REF_MEASUREMENT
+		/end GROUP
+		
+		/begin GROUP myWork.CCF_Statemachine_BD
+			""
+			/begin SUB_GROUP
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance
+			/end SUB_GROUP
+		/end GROUP
+		
+		/begin GROUP myWork.CCF_Statemachine_BD.CCF_Statemachine_instance
+			""
+			/begin REF_MEASUREMENT
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.CC_Off
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.CC_On
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.CC_active
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.brakeDriver
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.powerDriver
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.sm
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.targetSpeedDown
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.targetSpeedUp
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.v_ist
+				myWork.CCF_Statemachine_BD.CCF_Statemachine_instance.v_soll
+			/end REF_MEASUREMENT
+		/end GROUP
+		
+		/begin GROUP resources.CCF_Messages
+			""
+			/begin REF_MEASUREMENT
+				resources.CCF_Messages.brakepedal_cc
+				resources.CCF_Messages.gaspedal_cc
+			/end REF_MEASUREMENT
+		/end GROUP
+		
+		/begin GROUP resources.SMMessages
+			""
+			/begin REF_MEASUREMENT
+				resources.SMMessages.ccActive
+				resources.SMMessages.vTarget
 			/end REF_MEASUREMENT
 		/end GROUP
 		

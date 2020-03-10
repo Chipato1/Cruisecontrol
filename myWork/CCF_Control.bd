@@ -2,7 +2,7 @@ classType myWork.CCF_Control
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_8, connection_41, connection_43
+			connection_8, connection_52, connection_55, connection_60
 		}
 	}
 	simpleIdentifier resources.CarMessages.v at (181, 155) {
@@ -15,19 +15,14 @@ blockdiagramSpecification Main {
 		}
 	}
 	subtraction at (301, 106) {
-		inPin connection_2 {
-			bendpoints (70, 0)
+		inPin connection_45 {
+			bendpoints (30, 0), (30, 40)
 		}
 		inPin connection_1 {
 			bendpoints (50, 0), (50, -30)
 		}
 		outPin {
 			connection_10, connection_3
-		}
-	}
-	literal Numeric "100.0" at (181, 93) size (59, 0) {
-		outPin {
-			connection_2
 		}
 	}
 	multiplication at (461, 116) {
@@ -39,23 +34,24 @@ blockdiagramSpecification Main {
 			connection_12
 		}
 	}
-	literal Numeric "0.01" at (381, 153) size (49, 0) {
+	literal Numeric "0.01" at (381, 153) size (69, 0) {
 		outPin {
 			connection_4
 		}
 	}
-	simpleIdentifier resources.CCF_Messages.gaspedal_cc at (1211, 385) {
+	simpleIdentifier resources.CCF_Messages.gaspedal_cc at (1321, 385) {
 		label at (0, -1)
-		inPin connection_44
+		inPin connection_56 {
+			bendpoints (60, 0), (60, 250)
+		}
 		sequenceCall {
-			inPin connection_43
+			inPin connection_55
 		}
 	}
-	simpleIdentifier resources.CCF_Messages.brakepedal_cc at (1211, 505) {
+	simpleIdentifier resources.CCF_Messages.brakepedal_cc at (1321, 505) {
 		label at (0, -1)
-		inPin connection_42
-		sequenceCall {
-			inPin connection_41
+		inPin sequenceCall {
+			inPin
 		}
 	}
 	greater at (661, 296) {
@@ -111,7 +107,7 @@ blockdiagramSpecification Main {
 			connection_15
 		}
 	}
-	literal Numeric "0.01" at (381, 283) size (49, 0) {
+	literal Numeric "0.01" at (381, 283) size (69, 0) {
 		outPin {
 			connection_13
 		}
@@ -169,12 +165,12 @@ blockdiagramSpecification Main {
 			connection_37
 		}
 	}
-	literal Numeric "-100.0" at (941, 473) size (69, 0) {
+	literal Numeric "-100.0" at (941, 473) size (89, 0) {
 		outPin {
 			connection_30
 		}
 	}
-	literal Numeric "1.0" at (961, 353) size (49, 0) {
+	literal Numeric "100.0" at (961, 353) size (59, 0) {
 		outPin {
 			connection_29
 		}
@@ -195,7 +191,7 @@ blockdiagramSpecification Main {
 			bendpoints (30, 0), (30, 40)
 		}
 		outPin {
-			connection_44
+			connection_54
 		}
 	}
 	select integer at (1091, 481) size (4, 5) {
@@ -206,18 +202,114 @@ blockdiagramSpecification Main {
 		namedInPin "1" connection_38 {
 			bendpoints (30, 0), (30, 40)
 		}
-		outPin {
-			connection_42
-		}
+		outPin
 	}
-	literal Numeric "100.0" at (961, 393) size (59, 0) {
+	literal Numeric "100.0" at (961, 393) size (79, 0) {
 		outPin {
 			connection_39
 		}
 	}
-	literal Numeric "-100.0" at (941, 513) size (69, 0) {
+	literal Numeric "-100.0" at (941, 513) size (89, 0) {
 		outPin {
 			connection_40
 		}
 	}
+<<<<<<< HEAD
+	simpleIdentifier v_2 at (191, 65) {
+		label at (0, -1)
+		inPin outPin {
+=======
+	simpleIdentifier resources.SMMessages.vTarget at (181, 105) {
+		label at (0, -1)
+		outPin {
+>>>>>>> cb13c76353b22c068f52f33d649885abe7efa8ed
+			connection_45
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+<<<<<<< HEAD
+=======
+	simpleIdentifier gaspedal_tmp at (1191, 135) {
+		label at (10, 9)
+		inPin connection_54 {
+			bendpoints (40, 0)
+		}
+		outPin {
+			connection_56
+		}
+		sequenceCall {
+			inPin connection_53
+		}
+	}
+	ifElse at (1001, 111) {
+		inPin connection_59
+		ifControlFlowOutPin {
+			connection_53
+		}
+		elseControlFlowOutPin {
+			connection_57
+		}
+		sequenceCall {
+			inPin connection_52
+		}
+	}
+	simpleIdentifier gaspedal_tmp at (1051, 195) {
+		label at (10, 9)
+		inPin connection_58
+		outPin sequenceCall {
+			inPin connection_57 {
+				bendpoints (0, 30)
+			}
+		}
+	}
+	simpleIdentifier resources.DriverMessages.powerDriver at (881, 195) {
+		label at (0, -1)
+		outPin {
+			connection_58
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.CC_On at (881, 115) {
+		label at (0, -1)
+		outPin {
+			connection_59
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier resources.DriverMessages.CC_On at (881, 585) {
+		label at (0, -1)
+		outPin {
+			connection_62
+		}
+		sequenceCall {
+			inPin
+		}
+	}
+	ifElse at (1001, 581) {
+		inPin connection_62
+		ifControlFlowOutPin
+		elseControlFlowOutPin
+		sequenceCall {
+			inPin connection_60
+		}
+	}
+	simpleIdentifier brakepedal_tmp at (1071, 635) {
+		label at (0, -1)
+		inPin outPin sequenceCall {
+			inPin
+		}
+	}
+	simpleIdentifier brakepedal_tmp at (1211, 625) {
+		label at (0, -1)
+		inPin outPin sequenceCall {
+			inPin
+		}
+	}
+>>>>>>> cb13c76353b22c068f52f33d649885abe7efa8ed
 }

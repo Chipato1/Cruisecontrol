@@ -2,13 +2,13 @@ classType myWork.CCF_Statemachine_BD
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_33, connection_34, connection_35, connection_37, connection_36, connection_38, connection_39, connection_40
+			connection_250, connection_251, connection_253, connection_255, connection_267, connection_269, connection_271, connection_273, connection_275, connection_277, connection_279, connection_281, connection_283, connection_285, connection_287, connection_289
 		}
 	}
 	simpleIdentifier resources.DriverMessages.powerDriver at (191, 285) {
 		label at (-200, -21)
 		outPin {
-			connection_3
+			connection_252
 		}
 		sequenceCall {
 			inPin
@@ -17,43 +17,7 @@ blockdiagramSpecification Main {
 	simpleIdentifier resources.DriverMessages.brakeDriver at (191, 315) {
 		label at (-200, -21)
 		outPin {
-			connection_5
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier resources.DriverMessages.CC_On at (191, 375) {
-		label at (-190, -21)
-		outPin {
-			connection_14
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier resources.DriverMessages.CC_Off at (191, 345) {
-		label at (-190, -21)
-		outPin {
-			connection_18
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier resources.DriverMessages.targetSpeedUp at (191, 405) {
-		label at (-270, -21)
-		outPin {
-			connection_20
-		}
-		sequenceCall {
-			inPin
-		}
-	}
-	simpleIdentifier resources.DriverMessages.targetSpeedDown at (191, 435) {
-		label at (-300, -21)
-		outPin {
-			connection_22
+			connection_254
 		}
 		sequenceCall {
 			inPin
@@ -62,60 +26,170 @@ blockdiagramSpecification Main {
 	simpleIdentifier resources.CarMessages.v at (191, 465) {
 		label at (-90, -21)
 		outPin {
-			connection_24
+			connection_256
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-	complexIdentifier CCF_Statemachine_instance at (371, 241) size (51, 29) {
+	simpleIdentifier resources.DriverMessages.targetSpeedUp at (921, 435) {
+		label at (180, -21)
+		inPin connection_272
+		outPin {
+			connection_278
+		}
+		sequenceCall at (30, -284) {
+			inPin connection_271
+		}
+	}
+	simpleIdentifier resources.DriverMessages.targetSpeedDown at (921, 465) {
+		label at (170, -21)
+		inPin connection_274
+		outPin {
+			connection_276
+		}
+		sequenceCall at (-40, -344) {
+			inPin connection_273
+		}
+	}
+	simpleIdentifier resources.DriverMessages.CC_On at (921, 405) {
+		label at (180, -21)
+		inPin connection_270
+		outPin {
+			connection_280
+		}
+		sequenceCall at (100, -234) {
+			inPin connection_269
+		}
+	}
+	simpleIdentifier resources.DriverMessages.CC_Off at (921, 375) {
+		label at (180, -21)
+		inPin connection_268
+		outPin {
+			connection_282
+		}
+		sequenceCall at (170, -194) {
+			inPin connection_267
+		}
+	}
+	complexIdentifier CCF_Statemachine_instance at (281, 281) size (61, 34) {
 		label at (0, 1)
 		methodCall myWork.CCF_Statemachine.cCF_StatemachineStatemachineTrigger {
-			methodVoidPin at (top, 0) sequenceCall at (-14, -68) {
-				inPin connection_33
+			methodVoidPin at (top, 24) sequenceCall at (-14, -68) {
+				inPin connection_250
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.powerDriver) {
-			argumentPin at (left, 4) connection_3
-			sequenceCall at (-170, -224) {
-				inPin connection_34
+			argumentPin at (left, 0) connection_252
+			returnPin at (right, 3) {
+				connection_284
+			}
+			sequenceCall at (-230, -124) {
+				inPin connection_251
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.brakeDriver) {
-			argumentPin at (left, 7) connection_5
-			sequenceCall at (-330, -264) {
-				inPin connection_35
+			argumentPin at (left, 3) connection_254
+			returnPin at (right, 6) {
+				connection_286
+			}
+			sequenceCall at (-90, -154) {
+				inPin connection_253
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.CC_Off) {
-			argumentPin at (left, 10) connection_18
-			sequenceCall at (-260, -224) {
-				inPin connection_36
+			argumentPin at (left, 6) connection_282 {
+				bendpoints (100, 0), (100, 340), (-930, 340), (-930, -30)
+			}
+			returnPin at (right, 9) {
+				connection_268
+			}
+			sequenceCall at (140, -184) {
+				inPin connection_281
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.CC_On) {
-			argumentPin at (left, 13) connection_14
-			sequenceCall at (-350, -254) {
-				inPin connection_37
+			argumentPin at (left, 9) connection_280 {
+				bendpoints (80, 0), (80, 280), (-910, 280), (-910, -30)
+			}
+			returnPin at (right, 12) {
+				connection_270
+			}
+			sequenceCall at (110, -274) {
+				inPin connection_279
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.targetSpeedUp) {
-			argumentPin at (left, 16) connection_20
-			sequenceCall at (-170, -284) {
-				inPin connection_38
+			argumentPin at (left, 12) connection_278 {
+				bendpoints (60, 0), (60, 230), (-890, 230), (-890, -30)
+			}
+			returnPin at (right, 15) {
+				connection_272
+			}
+			sequenceCall at (-60, -304) {
+				inPin connection_277
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.targetSpeedDown) {
-			argumentPin at (left, 19) connection_22
-			sequenceCall at (-350, -254) {
-				inPin connection_39
+			argumentPin at (left, 15) connection_276 {
+				bendpoints (40, 0), (40, 180), (-880, 180), (-880, -30)
+			}
+			returnPin at (right, 18) {
+				connection_274
+			}
+			sequenceCall at (-260, -334) {
+				inPin connection_275
 			}
 		}
 		elementCall (myWork.CCF_Statemachine.v_ist) {
-			argumentPin at (left, 22) connection_24
-			sequenceCall at (-150, -284) {
-				inPin connection_40
+			argumentPin at (left, 18) connection_256
+			sequenceCall at (50, -304) {
+				inPin connection_255
 			}
+		}
+		elementCall (myWork.CCF_Statemachine.v_soll) {
+			returnPin at (right, 21) {
+				connection_288
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+		elementCall (myWork.CCF_Statemachine.CC_active) {
+			returnPin at (right, 24) {
+				connection_290
+			}
+			sequenceCall {
+				inPin
+			}
+		}
+	}
+	simpleIdentifier resources.CCF_Messages.gaspedal_cc at (931, 315) {
+		label at (60, -21)
+		inPin connection_284
+		sequenceCall at (80, -104) {
+			inPin connection_283
+		}
+	}
+	simpleIdentifier resources.CCF_Messages.brakepedal_cc at (931, 345) {
+		label at (60, -21)
+		inPin connection_286
+		sequenceCall at (170, -134) {
+			inPin connection_285
+		}
+	}
+	simpleIdentifier resources.SMMessages.vTarget at (1101, 495) {
+		label at (60, -21)
+		inPin connection_288
+		sequenceCall at (90, -284) {
+			inPin connection_287
+		}
+	}
+	simpleIdentifier resources.SMMessages.ccActive at (1101, 525) {
+		label at (60, -21)
+		inPin connection_290
+		sequenceCall at (170, -314) {
+			inPin connection_289
 		}
 	}
 }
