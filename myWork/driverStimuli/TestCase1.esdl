@@ -10,7 +10,7 @@ static class TestCase1 {
 	
 	/**
 	 * Testcase 1
-	 * Acceleration to 50 km/h
+	 * Driver accelerates to 50 km/h
 	 */
 	public real run(real currentVelocity) {
 		
