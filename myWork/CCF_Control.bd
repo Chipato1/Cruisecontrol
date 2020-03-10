@@ -214,23 +214,16 @@ blockdiagramSpecification Main {
 			connection_40
 		}
 	}
-<<<<<<< HEAD
-	simpleIdentifier v_2 at (191, 65) {
-		label at (0, -1)
-		inPin outPin {
-=======
+
 	simpleIdentifier resources.SMMessages.vTarget at (181, 105) {
 		label at (0, -1)
 		outPin {
->>>>>>> cb13c76353b22c068f52f33d649885abe7efa8ed
 			connection_45
 		}
 		sequenceCall {
 			inPin
 		}
 	}
-<<<<<<< HEAD
-=======
 	simpleIdentifier gaspedal_tmp at (1191, 135) {
 		label at (10, 9)
 		inPin connection_54 {
@@ -311,5 +304,4 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
->>>>>>> cb13c76353b22c068f52f33d649885abe7efa8ed
 }
