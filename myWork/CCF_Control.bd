@@ -15,13 +15,9 @@ blockdiagramSpecification Main {
 		}
 	}
 	subtraction at (301, 106) {
-<<<<<<< HEAD
 		inPin connection_45 {
 			bendpoints (30, 0), (30, 40)
 		}
-=======
-		inPin connection_45
->>>>>>> cb13c76353b22c068f52f33d649885abe7efa8ed
 		inPin connection_1 {
 			bendpoints (50, 0), (50, -30)
 		}
