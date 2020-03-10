@@ -2,7 +2,7 @@ classType myWork.CCF_Control
 blockdiagramSpecification Main {
 	methodBody calc {
 		outPin active {
-			connection_8, connection_52, connection_55, connection_60
+			connection_8, connection_52, connection_55, connection_60, connection_65
 		}
 	}
 	simpleIdentifier resources.CarMessages.v at (181, 155) {
@@ -34,7 +34,7 @@ blockdiagramSpecification Main {
 			connection_12
 		}
 	}
-	literal Numeric "0.01" at (381, 153) size (69, 0) {
+	literal Numeric "0.01" at (381, 153) size (49, 0) {
 		outPin {
 			connection_4
 		}
@@ -50,8 +50,11 @@ blockdiagramSpecification Main {
 	}
 	simpleIdentifier resources.CCF_Messages.brakepedal_cc at (1321, 505) {
 		label at (0, -1)
-		inPin sequenceCall {
-			inPin
+		inPin connection_66 {
+			bendpoints (10, 0), (10, -150)
+		}
+		sequenceCall {
+			inPin connection_65
 		}
 	}
 	greater at (661, 296) {
@@ -107,7 +110,7 @@ blockdiagramSpecification Main {
 			connection_15
 		}
 	}
-	literal Numeric "0.01" at (381, 283) size (69, 0) {
+	literal Numeric "0.01" at (381, 283) size (49, 0) {
 		outPin {
 			connection_13
 		}
@@ -165,7 +168,7 @@ blockdiagramSpecification Main {
 			connection_37
 		}
 	}
-	literal Numeric "-100.0" at (941, 473) size (89, 0) {
+	literal Numeric "-100.0" at (941, 473) size (69, 0) {
 		outPin {
 			connection_30
 		}
@@ -202,19 +205,20 @@ blockdiagramSpecification Main {
 		namedInPin "1" connection_38 {
 			bendpoints (30, 0), (30, 40)
 		}
-		outPin
+		outPin {
+			connection_64
+		}
 	}
-	literal Numeric "100.0" at (961, 393) size (79, 0) {
+	literal Numeric "100.0" at (961, 393) size (59, 0) {
 		outPin {
 			connection_39
 		}
 	}
-	literal Numeric "-100.0" at (941, 513) size (89, 0) {
+	literal Numeric "-100.0" at (941, 513) size (69, 0) {
 		outPin {
 			connection_40
 		}
 	}
-
 	simpleIdentifier resources.SMMessages.vTarget at (181, 105) {
 		label at (0, -1)
 		outPin {
@@ -284,23 +288,45 @@ blockdiagramSpecification Main {
 			inPin
 		}
 	}
-	ifElse at (1001, 581) {
+	ifElse at (1011, 581) {
 		inPin connection_62
-		ifControlFlowOutPin
-		elseControlFlowOutPin
+		ifControlFlowOutPin {
+			connection_63
+		}
+		elseControlFlowOutPin {
+			connection_67
+		}
 		sequenceCall {
 			inPin connection_60
 		}
 	}
-	simpleIdentifier brakepedal_tmp at (1071, 635) {
+	simpleIdentifier brakepedal_tmp at (1041, 665) {
 		label at (0, -1)
-		inPin outPin sequenceCall {
-			inPin
+		inPin connection_68
+		outPin sequenceCall {
+			inPin connection_67
 		}
 	}
-	simpleIdentifier brakepedal_tmp at (1211, 625) {
+	simpleIdentifier brakepedal_tmp at (1231, 655) {
 		label at (0, -1)
-		inPin outPin sequenceCall {
+		inPin connection_64 {
+			bendpoints (0, 60), (80, 60)
+		}
+		outPin {
+			connection_66
+		}
+		sequenceCall {
+			inPin connection_63 {
+				bendpoints (80, 0), (80, 50)
+			}
+		}
+	}
+	simpleIdentifier resources.DriverMessages.brakeDriver at (881, 665) {
+		label at (0, -1)
+		outPin {
+			connection_68
+		}
+		sequenceCall {
 			inPin
 		}
 	}
